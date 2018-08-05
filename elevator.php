@@ -107,6 +107,12 @@ class Elevator extends Base_Elevator_MSG {
 			}
 		}
 
-		$this->endMsg();
+		if (empty($defaultUsers) && empty($this->elevatorUsers)) {
+			$this->endMsg();
+			return true;
+		} 
+		else {
+			return false;
+		}
 	}
 }
